@@ -768,7 +768,8 @@ void DocTreeViewItem::createNewDocument()
                         AlertWindow::InfoIcon);
     const String fileName (SwingUtilities::getTimeStringWithSeparator (SwingUtilities::getCurrentTimeString(), true));
 
-    dialog.addTextEditor ("name", fileName.dropLastCharacters (9).replace (".", "-"));
+    //dialog.addTextEditor ("name", fileName.dropLastCharacters (9).replace (".", "-"));
+    dialog.addTextEditor ("name", fileName.dropLastCharacters (3).replace (".", "-").replace(" ","-").replace(":","-"));
     dialog.addButton (TRANS ("OK"), 0, KeyPress (KeyPress::returnKey));
     dialog.addButton (TRANS ("Cancel"), 1, KeyPress (KeyPress::escapeKey));
 
