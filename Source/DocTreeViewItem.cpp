@@ -439,6 +439,12 @@ void DocTreeViewItem::itemDoubleClicked (const MouseEvent& e)
             createNewFolder();
         else if (tree.getType().toString() == "dir")
             createNewDocument();
+		else if (tree.getType().toString() == "doc")
+		{
+			//open with external editor
+			getMdFileOrDir(tree).startAsProcess();
+
+		}
     }
 }
 
