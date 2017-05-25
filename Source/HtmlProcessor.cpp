@@ -1489,11 +1489,11 @@ const StringArray HtmlProcessor::getBlogList (const ValueTree& dirTree)
     for (int i = 0; i < linkStr.size(); ++i)
     {
         if (0 == i % 3)
-            linkStr.getReference (i) = "<div class=listTitle>" + linkStr[i] + "</div>";
+            linkStr.getReference (i) = "<div class=listItem><div class=listTitle>" + linkStr[i] + "</div>";
         else if (1 == i % 3)
             linkStr.getReference (i) = "<div class=listDate>" + linkStr[i] + "</div>";
         else
-            linkStr.getReference (i) = "<div class=listDesc>" + linkStr[i] + "</div><hr>";
+            linkStr.getReference (i) = "<div class=listDesc>" + linkStr[i] + "</div></div>";
     }
 
     //DBGX(linkStr.joinIntoString(newLine));
